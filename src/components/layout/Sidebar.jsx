@@ -5,20 +5,8 @@ export default function Sidebar({ data }) {
     const handleScroll = (e, id) => {
         e.preventDefault();
         const element = document.getElementById(id);
-        const mainContainer = document.getElementById('main-scroll-container'); // Need to add this ID to DashboardLayout
 
-        if (element && mainContainer) {
-            // Calculate relative scroll position
-            const elementTop = element.getBoundingClientRect().top;
-            const containerTop = mainContainer.getBoundingClientRect().top;
-
-            // Scroll the relative container, minus a bit of padding
-            mainContainer.scrollTo({
-                top: mainContainer.scrollTop + (elementTop - containerTop) - 24,
-                behavior: 'smooth'
-            });
-        } else if (element) {
-            // Fallback
+        if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };

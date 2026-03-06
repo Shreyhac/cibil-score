@@ -4,7 +4,7 @@ const AIContext = createContext();
 
 export function GeminiProvider({ children }) {
     // Read the API key from the local environment variable
-    const [apiKey, setApiKey] = useState(import.meta.env.VITE_GROQ_API_KEY || '');
+    const [apiKey, setApiKey] = useState(import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_GROQ_API_KEY || '');
 
     return (
         <AIContext.Provider value={{ apiKey, setApiKey }}>

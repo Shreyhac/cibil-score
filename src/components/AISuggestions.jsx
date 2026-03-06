@@ -9,6 +9,8 @@ export default function AISuggestions({ data }) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
+    if (!apiKey) return null;
+
     const handleGenerate = async () => {
         if (!apiKey) {
             setError('Please enter a Gemini API Key in the top bar.');

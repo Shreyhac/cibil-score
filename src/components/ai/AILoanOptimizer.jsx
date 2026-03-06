@@ -57,6 +57,7 @@ Respond with ONLY the JSON array, no markdown, no backticks, no preamble.`;
         }
     }, [apiKey, recommendations, loading, error, hasBalances]);
 
+    if (!apiKey) return null;
     if (!hasBalances && creditCards.length === 0) return null;
 
     return (
