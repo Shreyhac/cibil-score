@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-apple-blue: #007AFF;
+  --color-apple-light-bg: #F5F5F7;
+  --color-apple-light-card: #FFFFFF;
+  --color-apple-dark-bg: #1C1C1E;
+  --color-apple-dark-card: #2C2C2E;
+
+  --color-score-excellent: #34C759;
+  --color-score-verygood: #30D158;
+  --color-score-good: #FFD60A;
+  --color-score-fair: #FF9F0A;
+  --color-score-poor: #FF453A;
+
+  --font-sans: "SF Pro Display", "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  :root {
+    --bg-color: var(--color-apple-light-bg);
+    --card-color: var(--color-apple-light-card);
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --border-color: #E5E7EB;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: var(--color-apple-dark-bg);
+    --card-color: var(--color-apple-dark-card);
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --border-color: #374151;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .apple-card {
+    @apply bg-[var(--card-color)] rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] p-6 transition-all duration-300;
+  }
+  .apple-card:hover {
+    @apply -translate-y-0.5 shadow-[0_8px_24px_rgba(0,0,0,0.12)];
+  }
+}

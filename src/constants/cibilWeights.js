@@ -1,0 +1,7 @@
+export const CIBIL_WEIGHTS = {
+    PAYMENT_HISTORY: 30,
+    UTILIZATION: 25,
+    CREDIT_AGE: 25,
+    CREDIT_MIX: 10,
+    NEW_ENQUIRIES: 10
+};

@@ -1,0 +1,14 @@
+export const THRESHOLDS = {
+    CREDIT_UTILIZATION_IDEAL: 30,
+    CREDIT_UTILIZATION_HIGH: 50,
+    ON_TIME_PAYMENT_EXCELLENT: 95,
+    ON_TIME_PAYMENT_POOR: 85,
+    ENQUIRIES_SAFE: 3,
+    TOTAL_EMI_BURDEN_PERCENTAGE: 40, // Assume 40% of income is risky
+    SCORE_BANDS: {
+        EXCELLENT: 800,
+        VERY_GOOD: 750,
+        GOOD: 700,
+        FAIR: 650,
+    }
+};
