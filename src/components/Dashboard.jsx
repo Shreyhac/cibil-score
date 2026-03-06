@@ -14,7 +14,6 @@ import AILoanOptimizer from './ai/AILoanOptimizer';
 import AISpendAdvisor from './ai/AISpendAdvisor';
 import AIHomeLoanAdvisor from './ai/AIHomeLoanAdvisor';
 import ExportPDF from './ExportPDF';
-import AISuggestions from './AISuggestions';
 
 export default function Dashboard({ data }) {
     const contentRef = useRef(null);
@@ -95,7 +94,6 @@ export default function Dashboard({ data }) {
                     <div className="space-y-6">
                         <EnquiryTracker enquiries={data.enquiries} />
                         <Suggestions data={data} />
-                        <AISuggestions data={data} />
                     </div>
                 </div>
             </div>
